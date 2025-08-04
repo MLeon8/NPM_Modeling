@@ -1,0 +1,56 @@
+{
+    "simulation_name": "niche_formation_v1",
+    "description": "Simulación básica de formación de nicho premetastásico",
+    
+    "grid_settings": {
+        "grid_size": 200,
+        "boundary_conditions": "periodic"
+    },
+    
+    "model_parameters": {
+        "J": 0.8,
+        "beta": 0.5,
+        "h_tmb": 0.4,
+        "h_tip": 0.8,
+        "oscillation_period": 50,
+        "gamma": 0.3,
+        "kappa": 0.2
+    },
+    
+    "metastasis_settings": {
+        "organs": {
+            "Liver": {
+                "probability": 0.03,
+                "threshold": 100
+            },
+            "Lung": {
+                "probability": 0.02,
+                "threshold": 120
+            },
+            "Bone": {
+                "probability": 0.015,
+                "threshold": 150
+            }
+        },
+        "activation_delay": 50
+    },
+    
+    "simulation_control": {
+        "timesteps": 1000,
+        "num_runs": 5,
+        "save_interval": 10,
+        "save_frames": true,
+        "frames_dir": "results/frames"
+    },
+    
+    "output_settings": {
+        "save_raw_data": true,
+        "compression_level": 0,
+        "output_dir": "results/simulations",
+        "visualization": {
+            "generate_plots": true,
+            "plot_types": ["time_series", "spatial_patterns"],
+            "animation_fps": 15
+        }
+    }
+}
